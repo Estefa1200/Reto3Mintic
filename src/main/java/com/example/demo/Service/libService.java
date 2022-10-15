@@ -57,7 +57,12 @@ public class libService {
                 if(p.getDescription()!=null){
                     q.get().setDescription(p.getDescription());
                 }
+                if(p.getCategory()!=null){
+                    q.get().setCategory(p.getCategory());
+                }
                 return libRepository.save(q.get()) ;
+            }else{
+                return p;
             }
         }
         return p;

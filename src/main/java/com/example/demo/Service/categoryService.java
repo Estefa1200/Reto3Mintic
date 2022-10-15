@@ -51,7 +51,6 @@ public class categoryService {
                 if(p.getDescription()!=null){
                     q.get().setDescription(p.getDescription());
                 }
-                
                 return categoryRepository.save(q.get()) ;
             }
         }

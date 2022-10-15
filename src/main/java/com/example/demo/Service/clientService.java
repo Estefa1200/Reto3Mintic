@@ -45,6 +45,7 @@ public class clientService {
         if(p.getIdClient()!=null){
             Optional<Client> q =clientRepository.getClient(p.getIdClient());
             if(!q.isEmpty()){
+                
                 if(p.getPassword()!=null){
                     q.get().setPassword(p.getPassword());
                 }

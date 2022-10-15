@@ -51,6 +51,9 @@ public class reservationService {
                 if(p.getDevolutionDate()!=null){
                     q.get().setDevolutionDate(p.getDevolutionDate());
                 }
+                if(p.getScore()!=null){
+                    q.get().setScore(p.getScore());
+                }
                 
                 return reservationRepository.save(q.get()) ;
             }
