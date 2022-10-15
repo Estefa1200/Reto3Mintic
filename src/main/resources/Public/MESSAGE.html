@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table, th, td{
+            border:1px solid black;
+        }
+    </style> 
+<head>
+    <meta charset="UTF-8">
+    <title>MESSAGE</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="messageController.js"></script>
+</head>
+<body>
+<h1>MENSAJES</h1>
+<hr>
+<button type="button" onclick="mostrarMessage()">VER MENSAJES</button>
+<hr>
+<table id="tabla"></table>
+<hr>
+
+messageText: <input type="text" id="messageText"><br>
+libro: <input type="text" id="messageLib"><br>
+client: <input type="text" id="messageClient"><br>
+
+
+<br>
+<button type="button" onclick="guardarMessage()">GUARDAR MENSAJE</button>
+
+<hr>
+
+<a href="index.html">ATRAS</a>
+</body>
+</html>

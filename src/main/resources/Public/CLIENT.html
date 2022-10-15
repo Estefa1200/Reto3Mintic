@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table, th, td{
+            border:1px solid black;
+        }
+    </style> 
+<head>
+    <meta charset="UTF-8">
+    <title>CLIENT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="clientController.js"></script>
+</head>
+<body>
+<h1>CLIENTES</h1>
+<hr>
+<button type="button" onclick="mostrarClient()">VER CLIENTE</button>
+<hr>
+<table id="tabla"></table>
+<hr>
+
+email: <input type="text" id="clientEmail"><br>
+password: <input type="text" id="clientPassword"><br>
+name: <input type="text" id="clientName"><br>
+age: <input type="text" id="clientAge"><br>
+
+<br>
+<button type="button" onclick="guardarClient()">GUARDAR CLIENTE</button>
+
+<hr>
+
+<a href="index.html">ATRAS</a>
+</body>
+</html>

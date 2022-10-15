@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table, th, td{
+            border:1px solid black;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <title>RESERVATION</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="reservationController.js"></script>
+</head>
+<body>
+<h1>RESERVACIONES</h1>
+<hr>
+<button type="button" onclick="mostrarReservation()">VER RESERVACIONES</button>
+<hr>
+<table id="tabla"></table>
+<hr>
+
+startDate: <input type="text" id="startDate"><br>
+devolutionDate: <input type="text" id="devolutionDate"><br>
+libro: <input type="text" id="reservationLib"><br>
+cliente: <input type="text" id="reservationClient"><br>
+
+
+<br>
+<button type="button" onclick="guardarReservation()">GUARDAR RESERVACION</button>
+
+<hr>
+
+<a href="index.html">ATRAS</a>
+</body>
+</html>
