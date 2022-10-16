@@ -45,8 +45,8 @@ function mostrarTabla(items){
         }else{
             myTabla+="<td>"+"0"+"</td>";
         }
-        myTabla+="<td><button onclick='actualizarReservation(\""+items[i].id+"\")'>Editar</button>";
-        myTabla+="<td><button onclick='eliminarReservation(\""+items[i].id+"\")'>Eliminar</button>";
+        myTabla+="<td><button onclick='actualizarReservation(\""+items[i].idReservation+"\")'>Editar</button>";
+        myTabla+="<td><button onclick='eliminarReservation(\""+items[i].idReservation+"\")'>Eliminar</button>";
     }
     myTabla+="</tr>";
 
@@ -125,7 +125,7 @@ function actualizarReservation(codigo){
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
-            let idEditar=respuesta.id;
+            let idEditar=respuesta.idReservation;
             const libname=$('#reservationLib').val();
             const clientname=$('#reservationClient').val();
             $.ajax({

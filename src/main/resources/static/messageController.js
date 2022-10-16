@@ -28,8 +28,8 @@ function mostrarTabla(items){
         myTabla+="<td>"+items[i].messageText+"</td>";
         myTabla+="<td>"+items[i].lib.name+"</td>";
         myTabla+="<td>"+items[i].client.name+"</td>";
-        myTabla+="<td><button onclick='actualizarMessage(\""+items[i].id+"\")'>Editar</button>";
-        myTabla+="<td><button onclick='eliminarMessage(\""+items[i].id+"\")'>Eliminar</button>";
+        myTabla+="<td><button onclick='actualizarMessage(\""+items[i].idMessage+"\")'>Editar</button>";
+        myTabla+="<td><button onclick='eliminarMessage(\""+items[i].idMessage+"\")'>Eliminar</button>";
 
     }
     myTabla+="</tr>";
@@ -107,7 +107,7 @@ function actualizarMessge(codigo){
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
-            let idEditar=respuesta.id;
+            let idEditar=respuesta.idMessage;
             const libname=$('#messageLib').val();
             const clientname=$('#messageClient').val();
 
