@@ -95,11 +95,14 @@ function guardarLib(){
 }
 
 function actualizarLib(codigo){
+    
     $.ajax({
         url:"http://129.213.65.46:8090/api/Lib/"+codigo,
         type:"GET",
         datatype:"JSON",
+        
         success:function(respuesta){
+            
             let idEditar=respuesta.id;
             const categoryname=$('#libCategory').val();
             $.ajax({

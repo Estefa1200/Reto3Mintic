@@ -79,11 +79,13 @@ function guardarClient(){
     });
 }
 function actualizarClient(codigo){
+    debugger;
     $.ajax({
         url:"http://129.213.65.46:8090/api/Client/"+codigo,
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
+            debugger;
             let idEditar=respuesta.id;
             const data=
                 {
