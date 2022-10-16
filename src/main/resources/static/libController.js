@@ -34,8 +34,6 @@ function mostrarTabla(items){
         myTabla+="<td>"+items[i].description+"</td>";
         myTabla+="<td>"+items[i].category.name+"</td>";
 
-
-
         const myMessageIni="";
         const myMessage = items[i].messages.reduce(
             (Messageprev, Messageact) => Messageact.messageText +"  "+Messageprev,

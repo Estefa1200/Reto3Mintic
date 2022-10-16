@@ -43,8 +43,8 @@ function mostrarTabla(items){
         }else{
             myTabla+="<td>"+"0"+"</td>";
         }
-        myTabla+="<td><button onclick='actualizarClient(\""+items[i].id+"\")'>Editar</button>";
-        myTabla+="<td><button onclick='eliminarClient(\""+items[i].id+"\")'>Eliminar</button>";
+        myTabla+="<td><button onclick='actualizarClient(\""+items[i].idClient+"\")'>Editar</button>";
+        myTabla+="<td><button onclick='eliminarClient(\""+items[i].idClient+"\")'>Eliminar</button>";
 
 
     }
