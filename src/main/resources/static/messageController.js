@@ -130,7 +130,7 @@ function actualizarMessage(codigo){
                             let idClient= client.idClient;
                             const data=
                                 {
-                                    iidMessage: idEditar,
+                                    idMessage: idEditar,
                                     messageText:$('#messageText').val(),
                                     lib:{id:idLib},
                                     client:{idClient:idClient}
