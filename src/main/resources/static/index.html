@@ -29,4 +29,16 @@
 </ul>
 </div>
 </body>
+<script type="text/javascript">
+    $.get("/user", function(data){
+    if(data!==null){
+    $("#usuario").html(data.name);
+    $(".unauthenticated").hide();
+    $(".authenticated").show();
+    }else{
+    $(".unauthenticated").show();
+    $(".authenticated").hide();
+    }
+    });
+</script>
 </html>
