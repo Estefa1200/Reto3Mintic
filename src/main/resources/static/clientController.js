@@ -43,6 +43,8 @@ function mostrarTabla(items){
         }else{
             myTabla+="<td>"+"0"+"</td>";
         }
+        myTabla+="<td><button onclick='actualizarClient(\""+items[i].id+"\")'>Editar</button>";
+        myTabla+="<td><button onclick='eliminarClient(\""+items[i].id+"\")'>Eliminar</button>";
         
         
     }
@@ -75,4 +77,54 @@ alert("Cliente Guardado!!");
 //mostrarCategory();
 }
 });
+}
+function actualizarClient(codigo){
+     $.ajax({
+    url:"http://129.213.65.46:8090/api/Client/"+codigo,  
+    type:"GET",
+    datatype:"JSON",
+    success:function(respuesta){
+        let idEditar=respuesta.id;
+        const data=
+        {  
+        id: idEditar,
+        email:$('#clientEmail').val(),
+        password:$('#clientPassword').val(),
+        name:$('#clientName').val(),
+        age:$('#clientAge').val()
+        };
+        let convertir=JSON.stringify(data);
+            $.ajax({
+            url:"http://129.213.65.46:8090/api/Client/update",
+            type:"PUT",
+            data:convertir,
+            contentType:"application/JSON",
+            datatype:"JSON",
+
+            success:function(respuesta){
+            $('#clientEmail').val("");
+            $('#clientPassword').val("");
+            $('#clientName').val("");
+            $('#clientAge').val("");
+            mostrarClient();
+            }
+            });
+    }
+    });
+}
+
+function eliminarClient(codigo){
+    var opcion=confirm("Esta seguro de eliminar el Cliente? ");
+    if(opcion===true){
+    $.ajax({
+    url:"http://129.213.65.46:8090/api/Client/"+codigo,
+    type:"DELETE",
+    datatype:"JSON",
+
+    success:function(respuesta){
+    alert("Cliente Eliminado!!");
+    mostrarClient();
+    }
+    });
+    }
 }

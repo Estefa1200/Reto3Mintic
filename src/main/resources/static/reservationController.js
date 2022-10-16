@@ -45,7 +45,8 @@ function mostrarTabla(items){
         }else{
            myTabla+="<td>"+"0"+"</td>";
         }
-       
+        myTabla+="<td><button onclick='actualizarReservation(\""+items[i].id+"\")'>Editar</button>";
+        myTabla+="<td><button onclick='eliminarReservation(\""+items[i].id+"\")'>Eliminar</button>";
     }
      myTabla+="</tr>";
     
@@ -64,10 +65,7 @@ $.ajax({
         success:function(respuesta){
            let lib = respuesta.find(element => element.name===libname);
            let idLib= lib.id;
-           
-           
-            
-           
+
             $.ajax({
             url:"http://129.213.65.46:8090/api/Client/all",
             type:"GET",
@@ -119,4 +117,81 @@ $.ajax({
 });
     
 
+}
+
+function actualizarReservation(codigo){
+ $.ajax({
+    url:"http://129.213.65.46:8090/api/Reservation/"+codigo,  
+    type:"GET",
+    datatype:"JSON",
+    success:function(respuesta){
+    let idEditar=respuesta.id;
+    const libname=$('#reservationLib').val();
+    const clientname=$('#reservationClient').val();
+    $.ajax({
+        url:"http://129.213.65.46:8090/api/Lib/all",
+        type:"GET",
+        datatype:"JSON",
+        
+        success:function(respuesta){
+           let lib = respuesta.find(element => element.name===libname);
+           let idLib= lib.id;
+           
+        $.ajax({
+            url:"http://129.213.65.46:8090/api/Client/all",
+            type:"GET",
+            datatype:"JSON",
+            success:function(respuesta){
+                           
+            let client = respuesta.find(element => element.name===clientname);
+            let idClient= client.idClient;
+        
+        const data=
+        {
+        idReservation: idEditar, 
+        startDate:$('#startDate').val(),
+        devolutionDate:$('#devolutionDate').val(),
+        status:"created",
+        lib:{id:idLib},
+        client:{idClient:idClient}
+
+        };
+        let convertir=JSON.stringify(data);
+    
+        $.ajax({
+        url:"http://129.213.65.46:8090/api/Reservation/update",
+        type:"PUT",
+        data:convertir,
+        contentType:"application/JSON",
+        datatype:"JSON",
+
+        success:function(respuesta){
+        $('#startDate').val("");
+        $('#devolutionDate').val("");
+        $('#reservationLib').val("");
+        $('#reservationClient').val("");
+        mostrarReservation();
+        }
+        });
+        }
+        });
+        }
+     });       
+    }
+});
+}
+function eliminarReservation(codigo){
+    var opcion=confirm("Esta seguro de eliminar la Reserva? ");
+    if(opcion===true){
+    $.ajax({
+    url:"http://129.213.65.46:8090/api/Reservation/"+codigo,
+    type:"DELETE",
+    datatype:"JSON",
+
+    success:function(respuesta){
+    alert("Reserva Eliminada!!");
+    mostrarReservation();
+    }
+    });
+    }
 }
