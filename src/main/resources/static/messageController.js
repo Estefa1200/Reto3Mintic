@@ -103,7 +103,7 @@ function guardarMessage(){
 
 function actualizarMessage(codigo){
     $.ajax({
-        url:"http://129.213.65.46:8090/api/Mesagge/"+codigo,
+        url:"http://129.213.65.46:8090/api/Message/"+codigo,
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
