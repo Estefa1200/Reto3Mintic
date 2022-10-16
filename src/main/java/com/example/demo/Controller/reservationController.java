@@ -6,6 +6,8 @@ package com.example.demo.Controller;
 
 
 import com.example.demo.Entidades.Reservation;
+import com.example.demo.Entidades.dto.CompletedAndCancelled;
+import com.example.demo.Entidades.dto.TotalAndClient;
 import com.example.demo.Service.reservationService;
 import java.util.List;
 import java.util.Optional;
@@ -55,5 +57,19 @@ public class reservationController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
         return reservationService.delete(id);
+    }
+    @GetMapping("/report-dates/{fecha1}/{fecha2]")
+    public List<Reservation> getReservationsBetweenDatesReport(@PathVariable("fecha1") String fecha1, @PathVariable("fecha2")String fecha2){
+        return reservationService.getReservationsBetweenDatesReport(fecha1, fecha2);
+    }
+
+    @GetMapping("/report-status")
+    public CompletedAndCancelled getReservationStatusReport(){
+        return reservationService.getReservationStatusReport();
+    }
+
+    @GetMapping("/report-clients")
+    public List<TotalAndClient> getTopClientsReport(){
+        return reservationService.getTopClientsReport();
     }
 }
