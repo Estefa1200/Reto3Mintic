@@ -101,7 +101,7 @@ function guardarMessage(){
     });
 }
 
-function actualizarMessge(codigo){
+function actualizarMessage(codigo){
     $.ajax({
         url:"http://129.213.65.46:8090/api/Mesagge/"+codigo,
         type:"GET",
