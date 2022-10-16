@@ -31,6 +31,8 @@ padding:0;
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 50px;
+    margin-left:0;
+    padding:0;
 }
 .container unauthenticated{
     background-image:url("https://www.solofondos.com/wp-content/uploads/2022/02/interior-biblioteca-sala-vacia-leer-libros-estantes-madera_33099-1722.jpg");
@@ -39,6 +41,7 @@ padding:0;
 
 a:link {
     color: #34165A;
+    background: #BDA6DA;
 }
 a:focus {
     border-bottom: 1px solid;
@@ -60,6 +63,8 @@ a:active {
     background:rgb(225,227,239);
     width:40%;
     height:80px;
+    border: 2px solid #34165A;
+    align-items:center;
 }
 .Menu{
     background:rgb(225,227,239);
@@ -68,11 +73,19 @@ a:active {
     font-family:'Franklin Gothic Medium','Arial Narrow';
     display: flex;
     border: 2px solid #34165A;
+    width:40%;
+    align-items:center;
 
 }
 .container authenticated{
     background:rgb(225,227,239);
     width:40%;
-    height:80px;
+    height:50px;
+    border: 2px solid #34165A;
+}
+.Lista{
+    background:rgb(225,227,239);
+    width:40%;
+    height:150px;
     border: 2px solid #34165A;
 }

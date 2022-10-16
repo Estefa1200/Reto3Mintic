@@ -10,20 +10,27 @@
     <title>CLIENT</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="clientController.js"></script>
+    <link rel="stylesheet" href="tablasEstilos.css" type="text/css">
 </head>
 <body>
-<h1>CLIENTES</h1>
+<header class="contheader">
+    <div class="titulologo">
+        <div class="logo"></div>
+        <div class="titulo"><h1>CLIENTES</h1></div>
+    </div>
+</header>
+
 <hr>
 <button type="button" onclick="mostrarClient()">VER CLIENTE</button>
 <hr>
-<table id="tabla"></table>
+<table class="table" id="tabla"></table>
 <hr>
-
+<div class="Entradas">
 email: <input type="text" id="clientEmail"><br>
 password: <input type="text" id="clientPassword"><br>
 name: <input type="text" id="clientName"><br>
 age: <input type="text" id="clientAge"><br>
-
+</div>
 <br>
 <button type="button" onclick="guardarClient()">GUARDAR CLIENTE</button>
 

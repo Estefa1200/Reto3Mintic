@@ -12,19 +12,28 @@
     <title>CATEGORY</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="categoryController.js"></script>
+    <link rel="stylesheet" href="tablasEstilos.css" type="text/css">
 </head>
 <body>
-<h1>CATEGORIAS</h1>
+<header class="contheader">
+    <div class="titulologo">
+        <div class="logo"></div>
+        <div class="titulo"><h1>CATEGORIAS</h1></div>
+    </div>
+</header>
+
 <hr>
 <button type="button" onclick="mostrarCategory()">VER CATEGORIAS</button>
 
-<table id="tabla"></table>
+<table class="table" id="tabla"></table>
 <hr>
-
+<div class="Entradas">
 name: <input type="text" id="categoryName" placeholder="Name"><br>
 description: <input type="text" id="categoryDescription" placeholder="Description"><br>
+</div>
 <br>
 <button type="button" onclick="guardarCategory()">GUARDAR CATEGORIA</button>
+
 <hr>
 
 <a href="index.html">ATRAS</a>
