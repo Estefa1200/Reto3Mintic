@@ -139,7 +139,7 @@ function actualizarMessage(codigo){
 
 
                             $.ajax({
-                                url:"http://129.213.65.46:8090/api/Client/update",
+                                url:"http://129.213.65.46:8090/api/Message/update",
                                 type:"PUT",
                                 data:convertir,
                                 contentType:"application/JSON",
