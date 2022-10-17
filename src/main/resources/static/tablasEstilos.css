@@ -14,19 +14,20 @@ body{
 .titulologo{
     background-color:transparent;
     color:rgb(225,227,239);
-    width:50%;
-    height:100px;
-    margin-right:60px;
+    width:20%;
+    height:60px;
+    margin-right:20px;
     display: flex;
     justify-content: space-evenly;
     align-items:center;
     font-family:'Franklin Gothic Medium','Arial Narrow';
+    font-size: 16px;
 }
 
 .logo {
     background-image: url("https://leonautas.files.wordpress.com/2019/10/biblioteca-logo.png");
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 50px;
@@ -53,4 +54,9 @@ a:hover {
 a:active {
     background: #34165A;
     color: #BDA6DA;
+}
+.Entradas{
+    background:rgb(225,227,239);
+    font-family:'Franklin Gothic Medium','Arial Narrow';
+    font-size: 18px;
 }

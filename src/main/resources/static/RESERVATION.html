@@ -10,26 +10,33 @@
     <title>RESERVATION</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="reservationController.js"></script>
+    <link rel="stylesheet" href="tablasEstilos.css" type="text/css">
 </head>
 <body>
-<h1>RESERVACIONES</h1>
+<header class="contheader">
+    <div class="titulologo">
+        <div class="logo"></div>
+        <div class="titulo"><h2>RESERVACIONES</h2></div>
+    </div>
+</header>
+<div class="Entradas">
 <hr>
 <button type="button" onclick="mostrarReservation()">VER RESERVACIONES</button>
 <hr>
-<table id="tabla"></table>
+<table class="table" id="tabla"></table>
 <hr>
 
-startDate: <input type="text" id="startDate"><br>
-devolutionDate: <input type="text" id="devolutionDate"><br>
-libro: <input type="text" id="reservationLib"><br>
-cliente: <input type="text" id="reservationClient"><br>
+    <b>startDate:</b> <input type="text" id="startDate"><br>
+    <b>devolutionDate:</b> <input type="text" id="devolutionDate"><br>
+    <b>libro:</b> <input type="text" id="reservationLib"><br>
+    <b>cliente:</b>> <input type="text" id="reservationClient"><br>
 
 
 <br>
 <button type="button" onclick="guardarReservation()">GUARDAR RESERVACION</button>
 
 <hr>
-
+</div>
 <a href="index.html">ATRAS</a>
 </body>
 </html>
